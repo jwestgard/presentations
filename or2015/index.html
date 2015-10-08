@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=1024, user-scalable=no">
 
-  <title>DC Fedora Users Group, October 2015</title>
+  <title>F4 from the Ground Up, OR2015</title>
 
   <!-- Required stylesheet -->
   <link rel="stylesheet" media="screen" href="core/deck.core.css">
@@ -44,15 +44,20 @@
     <!-- Begin slides. Just make elements with a class of slide. -->
 
   <section class="slide">
-	<h2>Web Access Control</h2>
+	<h2>Fedora Four from the Ground Up<br>
+	    at the University of Maryland</h2>
 	<h3>Joshua Westgard<br>
-	    <em>Oct. 7, 2015</em></h3>
+	    <em>June 11, 2015</em></h3>
   </section>
   
 <section class="slide">
-	<h2>Access Control Use Cases</h2>
+	<h2>History</h2>
 	<ul>
-	<li></li>
+	<li>Fedora 2-based system, nearly 10 years old</li>
+	<li>Homegrown Java-based admin tools</li>
+	<li>Hippo CMS-based front end</li>
+	<li>Separate DSpace as IR</li>
+	<li>Audio-Video, Photographic, Manuscript, EAD</li>
 	</ul>
 </section>
 
@@ -73,7 +78,7 @@
 </section>
 
 <section class="slide">
-	<h2>WebAC Overview</h2>
+	<h2>Shortcomings</h2>
 	<ul>
 	<li>Too much custom code</li>
 	<li>Maintenance headache</li>
@@ -83,6 +88,94 @@
 	</ul>
 </section>
 
+<section class="slide">
+	<h2>Project Goals</h2>
+	<ul>
+	<li>Leverage repository improvements provided by Fedora 4 application</li>
+    <li>Migrate selected existing services and applications</li>
+    <li>Develop new features</li>
+    </ul>
+</section>
+
+<section class="slide">
+	<h2>Process</h2>
+	<ul>
+	<li>Stand up Fedora 4 as a 1st class production service</li>
+	<li>Ingest test resources of relatively simple content types</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<img alt="GIS Data" src="img/gis.png" />
+</section>
+
+<section class="slide">
+	<img alt="Plant Patents Database" src="img/plantpatents.png" />
+</section>
+
+<section class="slide">
+	<img alt="" src="img/rose.png" />
+</section>
+
+<section class="slide">
+	<h2>Process</h2>
+	<ul>
+	<li>Stand up Fedora 4 as a 1st class production service</li>
+	<li>Ingest resources of relatively simple content types</li>
+	<li>Stand up a Hydra Instance to manage content</li>
+	<li>Migrate content from Fedora 2 (migration utils)</li>
+	<li>Develop batch loading tools</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Metadata</h2>
+	<img alt="University of Maryland Descriptive Metadata" src="img/umdm.png" />
+</section>
+
+<section class="slide">
+	<h2>Metadata</h2>
+	<ul>
+	<li>Initial thinking was that MODS RDF was the most natural fit</li>
+	<li>Relatively quickly we turned to Dublin Core & DC Terms instead</li>
+	<li>40,000 FOXML DescMeta &lt; 60 distinct element paths </li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Content Modeling: PCDM</h2>
+	<img alt="PCDM example 1" src="img/ntlp.png" />
+</section>
+
+<section class="slide">
+	<h2>Content Modeling: PCDM</h2>
+	<img alt="PCDM example 2" src="img/godfrey.png" />
+</section>
+
+<section class="slide">
+	<h2>Content Modeling: PCDM</h2>
+	<img alt="KAP" src="img/kap.png" />
+</section>
+
+<section class="slide">
+	<h2>Content Modeling: PCDM</h2>
+	<img alt="PCDM example 3" src="img/pcdm1.png" />
+</section>
+
+<section class="slide">
+	<h2>Content Modeling: PCDM</h2>
+	<img alt="PCDM example 4" src="img/pcdm2.png" />
+</section>
+
+<section class="slide">
+	<h2>Progress Report</h2>
+	<ul>
+	<li>Resource challenges continue</li>
+	<li>Authorization blocker</li>
+	<li>The power of community source</li>
+	<li>WebACL development effort</li>
+	</ul>
+</section>
 
 <section class="slide">
 	<h2>Thank you!</h2>
