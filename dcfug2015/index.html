@@ -50,7 +50,7 @@
   </section>
   
 <section class="slide">
-	<h2>Access Control Use Cases</h2>
+	<h2>I. Our Access Control Use Case</h2>
 	<ul>
 	<li>Centralized Authentication System</li>
 	<li>Mixed Access Restrictions</li>
@@ -64,12 +64,12 @@
 </section>
 
 <section class="slide">
-    <h2>WebAC Overview</h2>
+    <h2>II. WebAC Overview</h2>
 	<img alt="W3C WebAC Wiki" src="img/w3c_WebAC.png" />
 </section>
 
 <section class="slide">
-	<h2>WebAC Overview</h2>
+	<h2>II. WebAC Overview</h2>
 	<ul>
 	<li>Authorization in a Linked Data Context</li>
 	<li>Evolving Standard</li>
@@ -83,7 +83,7 @@
 </section>
 
 <section class="slide">
-	<h2>Rationale</h2>
+	<h2>III. Rationale</h2>
 	<ul>
 	<li>Fedora 4 Migration Project</li>
 	<li>Community of Practice</li>
@@ -92,9 +92,36 @@
 </section>
 
 <section class="slide">
-	<h2>Authorizations as Linked Data</h2>
+    <h2>IV. Design</h2>
+	<img alt="Fedora WebAC Design Page" src="img/design.png" />
+</section>
+
+<section class="slide">
+	<h2>IV. Design</h2>
 	<ul>
-	<li></li>
+	<li>Lots of Disparate Use Cases</li>
+	<li>Asynchronous discussion and Teleconferencing</li>
+	<li>Authentication out of scope</li>
+	<li>Seven Requirements</li>
+	<li>Two Key Algorithms</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>V. Authorizations as Linked Data</h2>
+	<pre>@prefix acl: &lt;http://www.w3.org/ns/auth/acl#&gt;<br/>
+&lt;&gt; a acl:Authorization ; <br/>
+acl:accessTo </foo> ; <br/>
+acl:mode acl:Read; <br/>
+acl:agent &lt;/agents/userA&gt; .</pre>
+</section>
+
+<section class="slide">
+	<h2>VI. Phase 2 and Beyond</h2>
+	<ul>
+	<li>Full Implementation of Classes</li>
+	<li>Inheritance?</li>
+	<li>Regex Matching?</li>
 	</ul>
 </section>
 
