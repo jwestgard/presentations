@@ -57,11 +57,10 @@
 	<h2>The Problem</h2>
 	<ul>
 	    <img src="img/terminal.png" align="right" style="margin: 0px 20px"/>
-	    <li>Libraries have data stored in legacy systems or spreadsheets;</li>
-	    <li>For moving data between systems or into/out of a spreadsheet, the CSV file is a <em>de facto</em> standard;</li>
-	    <li>CSV = Comma Separated Values; AKA "the king of tabular file formats";</li>
-	    <li>The flexibility and ease of generating a CSV also means it is not very error tolerant and can be easily mangled;</li>
-	    <li>Import failures can precipitate a cycle of file ping-pong that is frustrating for both data creators and systems maintainers.</li>
+	    <li>Legacy data in spreadsheets;</li>
+	    <li>CSV as a de facto standard;</li>
+	    <li>CSV = Comma Separated Values;</li>
+	    <li>The problem of data ping-pong.</li>
 	</ul>
 </section>
 
@@ -71,20 +70,20 @@
 	<ul>
 	    <li>The comma is a special character (field separator);</li>
 	    <li>The line break is a special character (record separator);</li>
-	    <li>Character encoding problems and differences in line breaks (Windows vs. Mac OS vs. Unix/Linux);</li>
-	    <li>Raw CSV is difficult to read and therefore difficult to correct when problems crop up;</li>
-	    <li>Tools exist, such AWK or CSVkit, but may require Unix command line skills;</li>
-	    <li>Google Sheets/Open Refine are more user-friendly, but not as beloved as Excel.</li>
+	    <li>Character encoding;</li>
+	    <li>Not user friendly to edit;</li>
+	    <li>Limitations of existing tools;</li>
+	    <li>Google Sheets and Open Refine.</li>
 	</ul>
 </section>
 
 <section class="slide">
 	<h2>Guiding Principles</h2>
 	<ul>
-	<li>It is neither feasible nor desirable to eliminate Excel and CSV from our workflows.</li>
-	<li>Solution needs to make things easier, so an onerous learning curve is not an option.</li>
-	<li>Data creators are properly the ones to do data validation and cleanup.</li>
-	<li>Solution has to be general-purpose, not narrowly conceived.</li>
+	<li>Excel is here to stay;</li>
+	<li>Solution makes things easier, not more complicated;</li>
+	<li>Data creators should do data cleanup;</li>
+	<li>Solution should be general-purpose.</li>
 	 <img src="img/github.png" align="left" style="margin: 0px 20px"/></li>
 	</ul>
 </section>
@@ -93,21 +92,24 @@
 	<h2>The Solution</h2>
 	<img src="img/yaml.png" align="right" style="margin: 0px 20px; border: 1px solid black"/>
 	<ul>
-	<li>CSV-Validate is a Python project that seeks to put control of data quality back in the hands of data creators.</li>
-	<li>Allows for the creation of a human-readable CSV schema in the form of a YAML file.</li>
-	<li>This file can be applied to a CSV with a single-line command:<br/>
-	<code>python3 csv-validate.py schema.yaml data.csv</code></li>
-	<li>CSV-Validate will read the YAML file and the CSV, and evaluate the latter against the former, producing a report that identifies violations of the schema by line and column.</li>
-	<li>It can also work directly from an Excel file.</li>
+	<li>CSV-Validate (<a href="http://www.github.com/jwestgard/csv-validate/">http://www.github.com/jwestgard/csv-validate/</a></li>
+	<li>Features 
+	    <ol>
+	    <li>Human-readable CSV schema in the form of a YAML file.</li>
+	    <li>Can be applied to a CSV with a single-line command:<br/>
+	        <code>python3 csv-validate.py -s schema.yaml data.csv</code></li>
+	    <li>Reads YAML file and the CSV, evaluates the latter against the former, producing a report that identifies violations of the schema by line and column.</li>
+	    <li>It can also work directly from an Excel file.</li>
+	</li>
 	</ul>
 </section>
 
 <section class="slide">
 	<h2>Future Plans</h2>
 	<ul>
-	<li>Add data cleanup features to facilitate common data cleaning tasks (similar to Microsoft Office's spell check);</li>
+	<li>Add data cleanup features to facilitate data cleaning;</li>
 	<li>Convert the python script to a GUI application;</li>
-	<li>Explore opportunities to bring the application into alignment with new standards such as CSV on the Web (<a href="http://www.w3.org/2013/csvw/wiki/Main_Page">http://www.w3.org/2013/csvw/wiki/Main_Page</a>).
+	<li>Bring into alignment with standards (<a href="http://www.w3.org/2013/csvw/wiki/Main_Page">http://www.w3.org/2013/csvw/wiki/Main_Page</a>).
 	</ul>
 	<img src="img/csvweb.png"/>
 </section>
