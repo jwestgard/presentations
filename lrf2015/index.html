@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Libraries Innovation Forum: CSV Validation</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" href="themes/style/swiss.css">
+	
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+</head>
+<body>
+  
+  <div style="background-color: #eeeeee; border-bottom: 2px solid #999;">
+    <a href="http://www.lib.umd.edu/">
+      <img alt="University of Maryland Libraries"
+        src="http://www.lib.umd.edu/images/wrapper/liblogo.png"
+        style="padding: 5px">
+    </a>
+  </div>
+  
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+  <section class="slide">
+	<h2>CSV Validation for Metadata Wrangling</h2>
+	<h3><em>A Libraries Research and Innovative Practice Forum Lightning Talk</em></h3>
+	<p>&nbsp;</p>
+	<h3>Joshua Westgard
+	<br/>2015-06-04</h3>
+  </section>
+
+<section class="slide">
+	<h2>The Problem</h2>
+	<ul>
+	    <img src="img/terminal.png" align="right" style="margin: 0px 20px"/>
+	    <li>Libraries have data stored in legacy systems or spreadsheets;</li>
+	    <li>For moving data between systems or into/out of a spreadsheet, the CSV file is a <em>de facto</em> standard;</li>
+	    <li>CSV = Comma Separated Values; AKA "the king of tabular file formats";</li>
+	    <li>The flexibility and ease of generating a CSV also means it is not very error tolerant and can be easily mangled;</li>
+	    <li>Import failures can precipitate a cycle of file ping-pong that is frustrating for both data creators and systems maintainers.</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Issues with CSV</h2>
+	<img src="img/google.png" align="right" style="margin: 0px 20px"/>
+	<ul>
+	    <li>The comma is a special character (field separator);</li>
+	    <li>The line break is a special character (record separator);</li>
+	    <li>Character encoding problems and differences in line breaks (Windows vs. Mac OS vs. Unix/Linux);</li>
+	    <li>Raw CSV is difficult to read and therefore difficult to correct when problems crop up;</li>
+	    <li>Tools exist, such AWK or CSVkit, but may require Unix command line skills;</li>
+	    <li>Google Sheets/Open Refine are more user-friendly, but not as beloved as Excel.</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Guiding Principles</h2>
+	<ul>
+	<li>It is neither feasible nor desirable to eliminate Excel and CSV from our workflows.</li>
+	<li>Solution needs to make things easier, so an onerous learning curve is not an option.</li>
+	<li>Data creators are properly the ones to do data validation and cleanup.</li>
+	<li>Solution has to be general-purpose, not narrowly conceived.</li>
+	 <img src="img/github.png" align="left" style="margin: 0px 20px"/></li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>The Solution</h2>
+	<img src="img/yaml.png" align="right" style="margin: 0px 20px; border: 1px solid black"/>
+	<ul>
+	<li>CSV-Validate is a Python project that seeks to put control of data quality back in the hands of data creators.</li>
+	<li>Allows for the creation of a human-readable CSV schema in the form of a YAML file.</li>
+	<li>This file can be applied to a CSV with a single-line command:<br/>
+	<code>python3 csv-validate.py schema.yaml data.csv</code></li>
+	<li>CSV-Validate will read the YAML file and the CSV, and evaluate the latter against the former, producing a report that identifies violations of the schema by line and column.</li>
+	<li>It can also work directly from an Excel file.</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Future Plans</h2>
+	<ul>
+	<li>Add data cleanup features to facilitate common data cleaning tasks (similar to Microsoft Office's spell check);</li>
+	<li>Convert the python script to a GUI application;</li>
+	<li>Explore opportunities to bring the application into alignment with new standards such as CSV on the Web (<a href="http://www.w3.org/2013/csvw/wiki/Main_Page">http://www.w3.org/2013/csvw/wiki/Main_Page</a>).
+	</ul>
+	<img src="img/csvweb.png"/>
+</section>
+
+<section class="slide">
+	<h2>Thank you!</h2>
+	    <h3>Joshua Westgard (westgard@umd.edu)</h3>
+</section>
+
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
