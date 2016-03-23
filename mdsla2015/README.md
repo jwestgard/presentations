@@ -1,5 +1,2 @@
-# Maryland Special Libraries Association 2015 Presentation
-These are slides for a presentation at ["Leveraging Data to Lead"](http://maryland.sla.org/data.html), a conference sponsored by the Maryland Chapter of the Special Libraries Association in Laurel, MD on Nov. 5, 2015.
-
-## CSV Validation for Metadata Wrangling
-Because of its simplicity and universality, the Comma-Separated Values file (or CSV) remains, for better or worse, the least common denominator for moving data between systems, a sort of lingua franca for all manner of batch data migrations and ingest processes. But CSV data can be messy, and often there are problems that do not crop up until the datasets are being loaded, after they have passed out of the hands of those who have created them and into the hands of systems people. The CSV validation tool that I will describe and demonstrate is a script for the validation of CSV files against arbitrary sets of rules specified in a schema. It is intended to empower data creators to validate their own data against the requirements of the systems for which they are being prepared, so that those who are best equipped to address data problems can be apprised of those problems and correct them, before sending their data down the pipeline.
+# iSchool Workshop: Repository Systems at UMD Libraries
+These are slides for a presentation to the Student Archivists at Maryland Workshop on Mar. 23, 2016.
