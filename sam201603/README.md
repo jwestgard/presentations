@@ -1,0 +1,7 @@
+# Open Repositories 2015 Presentation
+These are the slides for a forthcoming presentation at the [Open Repositories 2015 (OR2015)](http://www.or2015.net) meeting in Indianapolis, June 8-11, 2015.
+
+## A Fedora 4 Repository from the Ground Up <br /> at the University of Maryland
+The digital collections repository of the University of Maryland Libraries celebrated its 10th anniversary in January 2015. While this homegrown system -- built on Fedora 2 and supported by two locally developed metadata schemas -- has served us well, after 10 years it is clearly showing its age. Over the years a combination of staff turnover and other, higher departmental priorities have conspired to prevent the upgrade to Fedora 3 from becoming a top priority. With the release of Fedora 4 this year, however, the stars seem to have aligned to give us the opportunity to re-envision our digital collections repository and make a fresh start with the new system.
+
+In this presentation I will describe our ongoing efforts to design and implement a Fedora 4 based repository system in 2015. By the time of the conference in June, we will be roughly halfway through an initial year-long development process. The objectives of this project are: (1) to leverage the repository improvements of Fedora 4, (2) to migrate some existing services and applications to the new system, and (3) to develop new features that were unrealized in the development of the previous repository and its interfaces.
