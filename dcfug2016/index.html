@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>DC Fedora Users Group, September 2016</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="../core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="../extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="../extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="../extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="../extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="../extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" href="../themes/style/swiss.css">
+	
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="../themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="../core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="../modernizr.custom.js"></script>
+</head>
+<body>
+  
+  <div style="background-color: #eeeeee; border-bottom: 2px solid #999;">
+    <a href="http://www.lib.umd.edu/">
+      <img alt="University of Maryland Libraries"
+        src="http://www.lib.umd.edu/images/wrapper/liblogo.png"
+        style="padding: 5px">
+    </a>
+  </div>
+  
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+<section class="slide">
+	<h2>Newspapers in PCDM</h2>
+	<h3>Joshua Westgard<br>
+	    <em>September 21, 2016</em></h3>
+</section>
+  
+<section class="slide">
+	<h2>I. Repository Status</h2>
+	<ul>
+	<li>Standalone Fcrepo</li>
+	<li>WebAC with CAS integration</li>
+	<li>Went into production in July</li>
+	<li>First major collection will be Diamondback</li>
+	<li>Blacklight/Mirador</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<img alt="Repository Ecosystem" src="img/ecosystem.png" />
+</section>
+
+<section class="slide">
+	<h2>II. Diamondback Student Newspaper</h2>
+	<ul>
+	<li>1920s-1970s</li>
+	<li>Digitized to NDNP standards from microfilm</li>
+	<li>ALTO XML with article segmentation</li>
+	<li>Likely the first of several newspapers</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<img alt="Diamondback" src="img/diamondback.png" />
+</section>
+
+<section class="slide">
+	<img alt="Diamondback" src="img/rifles.png" />
+</section>
+
+<section class="slide">
+	<h2>III. Content Modeling</h2>
+	<ul>
+	<li>PCDM seems sufficient</li>
+	<li>Collection -- Issue -- Page -- File
+	<li>Reel and Article</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<img alt="Newspaper Content Modeling" src="img/pcdm.png" />
+</section>
+
+<section class="slide">
+	<h2>III. Content Modeling</h2>
+	<ul>
+	<li>PCDM seem sufficient</li>
+	<li>Collection -- Issue -- Page -- File
+	<li>Reel and Article</li>
+	</ul>
+</section>
+
+<section class="slide">
+    <h2>IV. Batch Loader</h2>
+	<ul>
+	<li>Loader script for config and argument parsing
+	<li>Python classes for PCDM</li>
+	<li>Data handler module for project-specific logic</li>
+	<li>Data handler passes back an item-centric resource set</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<img alt="Python Batch Loader" src="img/batchloader.png" />
+</section>
+
+<section class="slide">
+    <h2>IV. Batch Loader</h2>
+	<ul>
+	<li>Rdflib module for metadata and content modeling</li>
+	<li>Requests for HTTP interaction</li>
+	<li>Primarily interacting by POST and PATCH</li>
+	<li>CSV module and lxml for data handling</li>
+	</ul>
+</section>
+	
+<section class="slide">
+	<h2>Thank you!</h2>
+	    <h3>Joshua Westgard (westgard@umd.edu)</h3>
+</section>
+
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="../jquery.min.js"></script>
+<script src="../core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="../extensions/menu/deck.menu.js"></script>
+<script src="../extensions/goto/deck.goto.js"></script>
+<script src="../extensions/status/deck.status.js"></script>
+<script src="../extensions/navigation/deck.navigation.js"></script>
+<script src="../extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
