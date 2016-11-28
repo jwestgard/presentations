@@ -50,7 +50,7 @@
 </section>
   
 <section class="slide">
-	<h2>Why SPARQL?</h2>
+	<h2>What is SPARQL?</h2>
 	<ul>
 	<li>SPARQL: SPARQL Protocol and RDF Query Language</li>
 	<li>Current version 1.1 (2013)</li>
@@ -59,16 +59,51 @@
 </section>
 
 <section class="slide">
-	<h2>Why SPARQL?</h2>
+	<h2>What is the Semantic Web?</h2>
 	<ul>
-	<li>It is query language for RDF.</li>
-    <li>RDF is directed, labeled graph data format.</li>
-    <li>RDF is divided into three sections (Subject, Predicate and Object).</li>
-    <li>SPARQL support aggregation, negation, subqueries, creating values by expressions and extensible value testing. </li>
+	<li>A key feature of the WWW is "hyperlinks" or "jump links" connecting documents</li>
+	<li>In web 1.0, these links have no meaning, but are merely unidirectional connections between documents</li>
+	<li>By contrast, in the Semantic Web, links have a meaning that defines the nature of the relationship between the resources being connected</li>
 	</ul>
 </section>
 
+<section class="slide">
+	<h2>Why SPARQL?</h2>
+	<ul>
+	<li>It is query language for RDF.</li>
+    <li>RDF is directed, labeled graph data format.
+        <ul>
+            <li>graph: network of vertices and edges (nodes and links)</li>
+            <li>directed: links have a "distinguished direction"</li>
+            <li>labeled: links (predicates) have meaning</li>
+        </ul>
+        </li>
+    <li>RDF is made up of triples, and triples have three components (Subject, Predicate and Object).</li>
+    <li>SPARQL supports aggregation, negation, subqueries, creating values by expressions, and extensible value testing. </li>
+	</ul>
+</section>
 
+<section class="slide">
+	<h2>SPARQL Syntax</h2>
+	<ul>
+	<li>A basic query starts with a SELECT clause identifying variables of interest
+	<li>Query variables are indicated by the use of either a question mark or dollar sign
+	<li>The ? or $ are not part of the variable name, so $abc and ?abc are equivalent</li>
+	<li>The query continues with a WHERE clause indicating a graph pattern to match against</li>
+	<li>The graph pattern is in the form subject, predicate, object enclosed by curly braces</li>
+	<li>The parts of the graph pattern can be expressed as URIs or as a prefix plus an identifier (this shorthand is known as the 'qname' syntax)</li>
+    </ul>
+</section>
+
+<section class="slide">
+	<h2>SPARQL Functions</h2>
+	<ul>
+	<li>Functions on strings</li>
+    <li>Functions on numbers</li>
+    <li>Functions on date and time</li>
+    <li>Hash functions</li>
+    </ul>
+</section>
 
 <section class="slide">
 	<h2>Thank you!</h2>
@@ -78,6 +113,8 @@
 	<h3>Bria Parker (blparker@umd.edu)
 	<h3>Joshua Westgard (westgard@umd.edu)</h3>
 </section>
+
+
 
     <!-- End slides. -->
 
