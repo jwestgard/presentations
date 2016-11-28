@@ -45,16 +45,17 @@
 
 <section class="slide">
 	<h2>SPARQL: <br />A Query Language for the Semantic Web</h2>
-	<h3>Emerging Technologies Discussion Group</h3>
-	<h3>Presented by Members of the Libraries Coding Workshop<br>
-	    <em>November 29, 2016</em></h3>
+	<h3>Emerging Technologies Discussion Group Presentation</h3>
+	<h3>Presented by members of the Libraries Coding Workshop</h3>
+	<h4><em>November 29, 2016</em></h4>
 </section>
   
 <section class="slide">
 	<h2>What is SPARQL?</h2>
 	<ul>
 	<li>SPARQL = "SPARQL Protocol and RDF Query Language"</li>
-	<li>Current version 1.1 (2013)</li>
+	<li><a href="https://www.w3.org/TR/rdf-sparql-query/">Original 1.0 release by W3C in 2008</a></w3>
+	<li><a href="https://www.w3.org/TR/sparql11-overview/" target="_blank">Current version (1.1) appeared in 2013</a></li>
 	<li>Together with RDF, RDFS, and OWL, SPARQL is a core techology of the semantic web</li>
 	</ul>
 </section>
@@ -109,8 +110,21 @@
 </section>
 
 <section class="slide">
+	<h2>SPARQL in UMD Libraries</h2>
+	<ul>
+	<li>SPARQL is likely to be increasingly part of day-to-day work in the Libraries</li>
+    <li>One of the first ways it is being used is in Fedora 4</li>
+    <li>Fedora is an implementation of the W3C's Linked Data Platform</li>
+    <li>Metadata is stored natively as RDF properties on repository containers</li>
+    <li>Fedora comes bundled with an RDF database or "Triplestore" called Fuseki</li>
+    <li>One immediate benefit of this infrastructure is that it will become possible to write queries on multiple Fedora-based repositories at once</li>
+    <li>Another RDF-based system currently being piloted on campus is Vivo</li>
+    </ul>
+</section>
+
+<section class="slide">
     <h2>SPARQL in Action</h2>
-    <h3><a href="http://nomisma.org/sparql">http://nomisma.org/sparql</a></h3>
+    <h4><a href="http://nomisma.org/sparql">http://nomisma.org/sparql</a></h4>
 </section>
 
 <section class="slide">
@@ -124,7 +138,84 @@ SELECT * WHERE {
 
 <section class="slide">
     <h2>SPARQL in Action</h2>
+    <pre>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX nm: <http://nomisma.org/id/>
+
+SELECT ?label WHERE {
+    nm:rome skos:prefLabel ?label
+    }
+</pre>
 </section>
+
+<section class="slide">
+    <h2>SPARQL in Action</h2>
+    <pre>
+    SELECT ?label ?type ?field ?lat ?long WHERE {
+        nm:rome skos:prefLabel ?label .
+        nm:rome rdf:type ?type .
+        nm:rome dcterms:isPartOf ?field .
+        nm:rome geo:location ?loc .
+        ?loc geo:lat ?lat .
+        ?loc geo:long ?long
+        }
+</pre>
+</section>
+
+<section class="slide">
+    <h2>SPARQL in Action</h2>
+    <pre>
+    SELECT ?label ?type ?field ?lat ?long WHERE {
+        nm:rome skos:prefLabel ?label ;
+        rdf:type ?type ;
+        dcterms:isPartOf ?field ;
+        geo:location ?loc .
+        ?loc geo:lat ?lat ;
+        geo:long ?long
+        }
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>SPARQL in Action</h2>
+    <pre>SELECT ?label WHERE {
+            nm:rome skos:prefLabel ?label
+            } ORDER BY ASC(xsd:string(?label))</pre>
+</section>
+
+<section class="slide">
+    <h2>SPARQL in Action</h2>
+    <pre>SELECT ?label WHERE {
+            nm:rome skos:prefLabel ?label .
+            FILTER langMatches( lang(?label), "en" )
+            }</pre>
+</section>
+
+<section class="slide">
+    <h2>SPARQL in Action</h2>
+    <pre>SELECT ?mints WHERE {
+            ?mints a nmo:Mint
+            }</pre>
+</section>
+
+<section class="slide">
+    <h2>SPARQL in Action</h2>
+    <pre>SELECT ?label ?lat ?long WHERE {
+            ?mints a nmo:Mint ;
+            skos:prefLabel ?label ;
+            dcterms:isPartOf nm:greek_numismatics ;
+            geo:location ?loc .
+            ?loc geo:lat ?lat ;
+            geo:long ?long
+            FILTER langMatches( lang(?label), "en" )
+            }</pre>
+</section>
+
+<section class="slide">
+    <h2>SPARQL in Action</h2>
+    <pre></pre>
+</section>
+
 
 <section class="slide">
 	<h2>Thank you!</h2>
