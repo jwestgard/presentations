@@ -143,10 +143,15 @@
 <section class="slide">
     <h2>SPARQL in Action</h2>
     <h4><a href="http://nomisma.org/sparql">http://nomisma.org/sparql</a></h4>
+    <p>The following examples are taken from the excellent webinar on SPARQL
+    by Ethan Gruber of the American Numismatic Society. For the full set of 
+    original slides, see:
+    <a href="http://dublincore.org/resources/training/ASIST_Webinar_20150513/SPARQL_2015.pdf">http://dublincore.org/resources/training/ASIST_Webinar_20150513/SPARQL_2015.pdf</a>
+    </p>
 </section>
 
 <section class="slide">
-    <h2>SPARQL in Action</h2>
+    <h2>SPARQL in Action: Basic Query</h2>
 <pre>
 SELECT * WHERE {
     ?s ?p ?o
@@ -156,7 +161,7 @@ SELECT * WHERE {
 </section>
 
 <section class="slide">
-    <h2>SPARQL in Action</h2>
+    <h2>SPARQL in Action: Prefixes</h2>
     <pre>
 PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
 PREFIX nm: &lt;http://nomisma.org/id/&gt;
@@ -168,7 +173,7 @@ SELECT ?label WHERE {
 </section>
 
 <section class="slide">
-    <h2>SPARQL in Action</h2>
+    <h2>SPARQL in Action: Complex Query</h2>
     <pre>
 SELECT ?label ?type ?field ?lat ?long WHERE {
     nm:rome skos:prefLabel ?label .
@@ -176,13 +181,11 @@ SELECT ?label ?type ?field ?lat ?long WHERE {
     nm:rome dcterms:isPartOf ?field .
     nm:rome geo:location ?loc .
     ?loc geo:lat ?lat .
+    ?loc geo:long ?long
     }
-</pre>
-</section>
-
-<section class="slide">
-    <h2>SPARQL in Action</h2>
-<pre>
+    
+[repeated subjects can be omitted with the help of semicolons]
+    
 SELECT ?label ?type ?field ?lat ?long WHERE {
     nm:rome skos:prefLabel ?label ;
         rdf:type ?type ;
@@ -195,7 +198,7 @@ SELECT ?label ?type ?field ?lat ?long WHERE {
 </section>
 
 <section class="slide">
-    <h2>SPARQL in Action</h2>
+    <h2>SPARQL in Action: Sorting</h2>
 <pre>
 SELECT ?label WHERE {
     nm:rome skos:prefLabel ?label
@@ -204,7 +207,7 @@ SELECT ?label WHERE {
 </section>
 
 <section class="slide">
-    <h2>SPARQL in Action</h2>
+    <h2>SPARQL in Action: Filtering</h2>
 <pre>
 SELECT ?label WHERE {
     nm:rome skos:prefLabel ?label .
@@ -214,7 +217,7 @@ SELECT ?label WHERE {
 </section>
 
 <section class="slide">
-    <h2>SPARQL in Action</h2>
+    <h2>SPARQL in Action: Broad Queries</h2>
 <pre>
 SELECT ?mints WHERE {
     ?mints a nmo:Mint
@@ -223,7 +226,7 @@ SELECT ?mints WHERE {
 </section>
 
 <section class="slide">
-    <h2>SPARQL in Action</h2>
+    <h2>SPARQL in Action: Visualize Big Datasets</h2>
 <pre>
 SELECT ?label ?lat ?long WHERE {
     ?mints a nmo:Mint ;
