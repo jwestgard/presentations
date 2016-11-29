@@ -47,27 +47,36 @@
 	<h2>SPARQL: <br />A Query Language for the Semantic Web</h2>
 	<h3>Emerging Technologies Discussion Group Presentation</h3>
 	<h3>Presented by members of the Libraries Coding Workshop</h3>
-	<h4><em>November 29, 2016</em></h4>
+	<h3>November 29, 2016</h3>
 </section>
   
 <section class="slide">
 	<h2>What is SPARQL?</h2>
 	<ul>
 	<li>SPARQL = "SPARQL Protocol and RDF Query Language"</li>
-	<li><a href="https://www.w3.org/TR/rdf-sparql-query/">Original 1.0 release by W3C in 2008</a></w3>
-	<li><a href="https://www.w3.org/TR/sparql11-overview/" target="_blank">Current version (1.1) appeared in 2013</a></li>
-	<li>Together with RDF, RDFS, and OWL, SPARQL is a core techology of the semantic web</li>
+	<li><a href="https://www.w3.org/TR/rdf-sparql-query/">Original 1.0 release by W3C in 2008</a>.</w3>
+	<li><a href="https://www.w3.org/TR/sparql11-overview/" target="_blank">Current version (1.1) appeared in 2013</a>.</li>
+	<li>Together with RDF, RDFS, and OWL, SPARQL is a core techology of the semantic web.</li>
 	</ul>
 </section>
 
 <section class="slide">
 	<h2>What is the Semantic Web?</h2>
 	<ul>
-	<li>A central feature of the WWW is "hyperlinks" or "jump links" connecting documents</li>
-	<li>In web 1.0, these links have no meaning, but are merely unidirectional connections between documents</li>
-	<li>By contrast, in the Semantic Web, links have a meaning that defines the nature of the relationship between the resources being connected</li>
-	<li>Links are still unidirectional, but can be represented in the form of a triple that expresses an idea where the subject, predicate, and object are all URIs that refer to entities and concepts in the world ("LeoTolstoy" "isAuthorOf" "WarAndPeace")</li>
-	<li>RDF, the Resource Description Framework, is the way of expressing these triples; there are in turn different syntaxes for expressing RDF (n3, ttl)
+	<li>A central feature of the WWW is the use of "hyperlinks" or "jump links" to connect documents.</li>
+	<li>In web 1.0, these links have no meaning, but are merely unidirectional connections between documents.</li>
+	<li>By contrast, in the Semantic Web, there is another kind of linkage, expressed in the form of triples connecting "resources".</li>
+	<li>The links that are created by these triples have a meaning that denotes the nature of the relationship between the two resources that are being connected.</li>
+	</ul>
+	</section>
+	
+<section class="slide">
+	<h2>What is the Semantic Web?</h2>
+	<ul>
+	<li>These links are still fundamentally unidirectional, but they also express an idea or statement about things in the world.</li>
+	<li>The subject, predicate, and object can all be URIs that refer to entities and concepts in the world.</li>
+	<li>For example, a triple might take express the idea that: "LeoTolstoy" "isAuthorOf" "WarAndPeace", but with each of these three concepts expressed as a globally unique identifier, or URI.</li>
+	<li>RDF, the Resource Description Framework, is the way these triples are expressed; there are in turn different syntaxes for expressing RDF (e.g. n-triples, turtle)</li>
 	</ul>
 </section>
 
@@ -75,11 +84,11 @@
 	<h2>Why SPARQL?</h2>
 	<ul>
 	<li>SPARQL is a query language for RDF.</li>
-    <li>RDF is directed, labeled graph data format.
+    <li>RDF is directed, labeled graph data format:
         <ul>
-            <li>graph: network of vertices and edges (nodes and links)</li>
-            <li>directed: links have a "distinguished direction"</li>
-            <li>labeled: links (predicates) have meaning</li>
+            <li>graph: network of vertices and edges (nodes and links);</li>
+            <li>directed: links have a "distinguished direction";</li>
+            <li>labeled: links (predicates) have meaning.</li>
         </ul>
         </li>
     <li>RDF is made up of triples, and triples have three components (Subject, Predicate and Object).</li>
@@ -90,35 +99,44 @@
 <section class="slide">
 	<h2>SPARQL Syntax</h2>
 	<ul>
-	<li>A basic query starts with a SELECT clause identifying the variables of interest
-	<li>Query variables are indicated by the use of either a question mark or dollar sign
-	<li>The ? or $ are not part of the variable name, so $abc and ?abc are equivalent</li>
-	<li>The second part of this basic query is a WHERE clause indicating a graph pattern to match against</li>
-	<li>The graph pattern is in the form subject, predicate, object enclosed by curly braces</li>
-	<li>The parts of the graph pattern can be expressed as URIs or as a prefix plus an identifier (this shorthand is known as the 'qname' syntax)</li>
+	<li>A basic query starts with a SELECT clause identifying the variables of interest.
+	<li>Query variables are indicated by the use of either a question mark or dollar sign.
+	<li>The ? or $ are not part of the variable name, so $abc and ?abc are equivalent.</li>
+	<li>The second part of this basic query is a WHERE clause indicating a graph pattern to match against.</li>
+	<li>The graph pattern is in the form subject, predicate, object enclosed by curly braces.</li>
+	<li>The parts of the graph pattern can be expressed as URIs or as a prefix plus an identifier (this shorthand is known as the 'qname' syntax).</li>
     </ul>
 </section>
 
 <section class="slide">
 	<h2>SPARQL Functions</h2>
 	<ul>
-	<li>Functions on strings</li>
-    <li>Functions on numbers</li>
-    <li>Functions on date and time</li>
-    <li>Hash functions</li>
+	<li>SPARQL supports various functions that allow the filtering and processing of query results: 
+	    <ul>
+	        <li>Functions on strings;</li>
+            <li>Functions on numbers;</li>
+            <li>Functions on date and time;</li>
+            <li>Hash functions.</li>
+        </ul></li>
+    <li>Other "advanced" features include:
+        <ul>
+            <li>Pattern matching (regex);</li>
+            <li>Inferencing;</li>
+            <li>Blank nodes.</li>
+        <ul></li>
     </ul>
 </section>
 
 <section class="slide">
 	<h2>SPARQL in UMD Libraries</h2>
 	<ul>
-	<li>SPARQL is likely to be increasingly part of day-to-day work in the Libraries</li>
-    <li>One of the first ways it is being used is in Fedora 4</li>
-    <li>Fedora is an implementation of the W3C's Linked Data Platform</li>
-    <li>Metadata is stored natively as RDF properties on repository containers</li>
-    <li>Fedora comes bundled with an RDF database or "Triplestore" called Fuseki</li>
-    <li>One immediate benefit of this infrastructure is that it will become possible to write queries on multiple Fedora-based repositories at once</li>
-    <li>Another RDF-based system currently being piloted on campus is Vivo</li>
+	<li>SPARQL is likely to be increasingly part of day-to-day work in the Libraries.</li>
+    <li>One of the first ways it is being used is in Fedora 4.</li>
+    <li>Fedora is an implementation of the W3C's Linked Data Platform.</li>
+    <li>Metadata is stored natively as RDF properties on repository containers.</li>
+    <li>Fedora comes bundled with an RDF database or "Triplestore" called Fuseki.</li>
+    <li>One immediate benefit of this infrastructure is that it will become possible to write queries on multiple Fedora-based repositories at once.</li>
+    <li>Another RDF-based system currently being piloted on campus is Vivo, a RDF-based institutional data management framework.</li>
     </ul>
 </section>
 
@@ -129,18 +147,19 @@
 
 <section class="slide">
     <h2>SPARQL in Action</h2>
-    <pre>
+<pre>
 SELECT * WHERE {
     ?s ?p ?o
-    } LIMIT 100</pre>
+    } LIMIT 100
+</pre>
 </h3>
 </section>
 
 <section class="slide">
     <h2>SPARQL in Action</h2>
     <pre>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX nm: <http://nomisma.org/id/>
+PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+PREFIX nm: &lt;http://nomisma.org/id/&gt;
 
 SELECT ?label WHERE {
     nm:rome skos:prefLabel ?label
@@ -151,71 +170,72 @@ SELECT ?label WHERE {
 <section class="slide">
     <h2>SPARQL in Action</h2>
     <pre>
-    SELECT ?label ?type ?field ?lat ?long WHERE {
-        nm:rome skos:prefLabel ?label .
-        nm:rome rdf:type ?type .
-        nm:rome dcterms:isPartOf ?field .
-        nm:rome geo:location ?loc .
-        ?loc geo:lat ?lat .
-        ?loc geo:long ?long
-        }
+SELECT ?label ?type ?field ?lat ?long WHERE {
+    nm:rome skos:prefLabel ?label .
+    nm:rome rdf:type ?type .
+    nm:rome dcterms:isPartOf ?field .
+    nm:rome geo:location ?loc .
+    ?loc geo:lat ?lat .
+    }
 </pre>
 </section>
 
 <section class="slide">
     <h2>SPARQL in Action</h2>
-    <pre>
-    SELECT ?label ?type ?field ?lat ?long WHERE {
-        nm:rome skos:prefLabel ?label ;
+<pre>
+SELECT ?label ?type ?field ?lat ?long WHERE {
+    nm:rome skos:prefLabel ?label ;
         rdf:type ?type ;
         dcterms:isPartOf ?field ;
         geo:location ?loc .
-        ?loc geo:lat ?lat ;
+    ?loc geo:lat ?lat ;
         geo:long ?long
-        }
-    </pre>
+    }
+</pre>
 </section>
 
 <section class="slide">
     <h2>SPARQL in Action</h2>
-    <pre>SELECT ?label WHERE {
-            nm:rome skos:prefLabel ?label
-            } ORDER BY ASC(xsd:string(?label))</pre>
+<pre>
+SELECT ?label WHERE {
+    nm:rome skos:prefLabel ?label
+    } ORDER BY ASC(xsd:string(?label))
+</pre>
 </section>
 
 <section class="slide">
     <h2>SPARQL in Action</h2>
-    <pre>SELECT ?label WHERE {
-            nm:rome skos:prefLabel ?label .
-            FILTER langMatches( lang(?label), "en" )
-            }</pre>
+<pre>
+SELECT ?label WHERE {
+    nm:rome skos:prefLabel ?label .
+    FILTER langMatches( lang(?label), "en" )
+    }
+</pre>
 </section>
 
 <section class="slide">
     <h2>SPARQL in Action</h2>
-    <pre>SELECT ?mints WHERE {
-            ?mints a nmo:Mint
-            }</pre>
+<pre>
+SELECT ?mints WHERE {
+    ?mints a nmo:Mint
+    }
+</pre>
 </section>
 
 <section class="slide">
     <h2>SPARQL in Action</h2>
-    <pre>SELECT ?label ?lat ?long WHERE {
-            ?mints a nmo:Mint ;
-            skos:prefLabel ?label ;
-            dcterms:isPartOf nm:greek_numismatics ;
-            geo:location ?loc .
-            ?loc geo:lat ?lat ;
-            geo:long ?long
-            FILTER langMatches( lang(?label), "en" )
-            }</pre>
+<pre>
+SELECT ?label ?lat ?long WHERE {
+    ?mints a nmo:Mint ;
+        skos:prefLabel ?label ;
+        dcterms:isPartOf nm:greek_numismatics ;
+        geo:location ?loc .
+    ?loc geo:lat ?lat ;
+        geo:long ?long
+    FILTER langMatches( lang(?label), "en" )
+    }
+</pre>
 </section>
-
-<section class="slide">
-    <h2>SPARQL in Action</h2>
-    <pre></pre>
-</section>
-
 
 <section class="slide">
 	<h2>Thank you!</h2>
@@ -225,8 +245,6 @@ SELECT ?label WHERE {
 	<h3>Bria Parker (blparker@umd.edu)
 	<h3>Joshua Westgard (westgard@umd.edu)</h3>
 </section>
-
-
 
     <!-- End slides. -->
 
