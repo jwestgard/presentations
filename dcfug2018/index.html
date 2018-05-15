@@ -66,10 +66,18 @@
 
 <section class="slide">
 	<h2>II. Why is it called Plastron?</h2>
+	<img src='img/Plastron.jpg'>
 	<ul>
 	<li>Plastron is the underside of a turtle's shell</li>
 	<li>References the Diamondback Terrapin, the UMD mascot</li>
-	<li>Also relates to Archelon</li>
+	</ul>
+</section>
+
+<section class="slide">
+    <h2>II. Why is it called Plastron?</h2>
+    <img src='img/Archelon_skeleton.jpg '>
+	<ul>
+	<li>Name also relates to Archelon</li>
 	<li>Archelon is a prehistoric giant turtle and the namesake of our repository management application</li>
 	</ul>
 </section>
@@ -78,7 +86,7 @@
 	<h2>III. Features (A)</h2>
 	<ul>
 	<li>LDP, PCDM, and Fcrepo classes being abstracted out into their own packages</li>
-	<li>Goal is for Plaston to become a bulk operations script that relies on these libraries</li>
+	<li>Goal is for Plastron to become one script that relies on these libraries</li>
 	</ul>
 </section>
 
@@ -87,8 +95,8 @@
 	<ul>
 	<li>Modular design</li>
 	<li>Data handler interprets project data</li>
-	<li>Currently have handlers for NDNP newspapers</li>
-	<li>"Turtle" handler in development (RDF + binaries)</li>
+	<li>Currently have handlers for NDNP newspapers and a "Turtle" handler (RDF + binaries)</li>
+	<li>CSV handler is planned</li>
 	</ul>
 </section>
 
@@ -96,18 +104,18 @@
 	<h2>III. Features (C)</h2>
 	<ul>
 	<li>Batch atomic operations</li>
-	<li>Concept of the item vs. component resource</li>
-	<li>Thanks to transactions, items succeed or fail as a unit</li>
+	<li>Core concept: item vs. component resource</li>
+	<li>Thanks to transactions, items can succeed or fail as a unit</li>
 	</ul>
 </section>
 
 <section class="slide">
 	<h2>III. Features (D)</h2>
 	<ul>
-	<li>Batch and respository configuration</li>
+	<li>Batch and respository configuration files for ease of use</li>
 	<li>Configurable logging</li>
-	<li>Logging of successful loads allows batch resumability</li>
-	<li>Load can be limited to a number or percent of the total batch</li>
+	<li>Transactions and easy batch resumability</li>
+	<li>Limit, percent, dry-run, ping</li>
 	</ul>
 </section>
 
@@ -115,7 +123,8 @@
 	<h2>III. Features (E)</h2>
 	<ul>
 	<li>Command-line tool with subcommand architecture</li>
-	<li>Can walk PCDM relations and perform CRUD</li>
+	<li>--> plastron {load, delete, etc.}
+	<li>Can walk PCDM relations and perform CRUD operations</li>
 	<li>Goal is to enable easy, efficient, & reliable interactions with repository resources</li>
 	</ul>
 </section>
@@ -124,8 +133,8 @@
 	<h2>IV. Future Plans</h2>
 	<ul>
 	<li>Release underlying classes as their own module</li>
-	<li>Can be used for to create other batch loaders, but also testing and repository crawling applications</li>
-	<li>Hoping for community use and possible adoption</li>
+	<li>These classes could be used to create other loaders, but also testing and repository crawling applications</li>
+	<li>Hoping for community use and possible adoption as common python+fcrepo toolkit</li>
 	</ul>
 </section>
 
