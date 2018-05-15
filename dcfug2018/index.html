@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>DC Fedora Users Group, May 2018</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="../core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="../extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="../extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="../extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="../extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="../extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" href="../themes/style/swiss.css">
+	
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="../themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="../core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="../modernizr.custom.js"></script>
+</head>
+<body>
+  
+  <div style="background-color: #eeeeee; border-bottom: 2px solid #999;">
+    <a href="http://www.lib.umd.edu/">
+      <img alt="University of Maryland Libraries"
+        src="http://www.lib.umd.edu/images/wrapper/liblogo.png"
+        style="padding: 5px">
+    </a>
+  </div>
+  
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+<section class="slide">
+	<h2>DC Fedora User Group <br />University of Maryland Libraries</h2>
+	    <em>May 15, 2018</em></h3>
+</section>
+
+<section class="slide">
+	<h2>Introducing Plastron: <br />A Python Client for the Fedora API</h2>
+	<h3>Joshua Westgard<br>
+	    <em>May 15, 2018</em></h3>
+</section>
+  
+<section class="slide">
+	<h2>I. What is Plastron?</h2>
+	<ul>
+	<li>Plastron is a Python-based client for interacting with the <a href="https://fedora.info/spec">Fedora API</a></li>
+	<li>Originated in one-off batch loader for testing fcrepo</li>
+	<li>Ideas developed further in import/export sprints</li>
+	<li>Became formalized in Diamonback Newspaper Digitization</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>II. Why is it called Plastron?</h2>
+	<ul>
+	<li>Plastron is the underside of a turtle's shell</li>
+	<li>References the Diamondback Terrapin, the UMD mascot</li>
+	<li>Also relates to Archelon</li>
+	<li>Archelon is a prehistoric giant turtle and the namesake of our repository management application</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>III. Features (A)</h2>
+	<ul>
+	<li>LDP, PCDM, and Fcrepo classes being abstracted out into their own packages</li>
+	<li>Goal is for Plaston to become a bulk operations script that relies on these libraries</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>III. Features (B)</h2>
+	<ul>
+	<li>Modular design</li>
+	<li>Data handler interprets project data</li>
+	<li>Currently have handlers for NDNP newspapers</li>
+	<li>"Turtle" handler in development (RDF + binaries)</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>III. Features (C)</h2>
+	<ul>
+	<li>Batch atomic operations</li>
+	<li>Concept of the item vs. component resource</li>
+	<li>Thanks to transactions, items succeed or fail as a unit</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>III. Features (D)</h2>
+	<ul>
+	<li>Batch and respository configuration</li>
+	<li>Configurable logging</li>
+	<li>Logging of successful loads allows batch resumability</li>
+	<li>Load can be limited to a number or percent of the total batch</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>III. Features (E)</h2>
+	<ul>
+	<li>Command-line tool with subcommand architecture</li>
+	<li>Can walk PCDM relations and perform CRUD</li>
+	<li>Goal is to enable easy, efficient, & reliable interactions with repository resources</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>IV. Future Plans</h2>
+	<ul>
+	<li>Release underlying classes as their own module</li>
+	<li>Can be used for to create other batch loaders, but also testing and repository crawling applications</li>
+	<li>Hoping for community use and possible adoption</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Thank you!</h2>
+	    <h3>Joshua Westgard (westgard@umd.edu)</h3>
+</section>
+
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="../jquery.min.js"></script>
+<script src="../core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="../extensions/menu/deck.menu.js"></script>
+<script src="../extensions/goto/deck.goto.js"></script>
+<script src="../extensions/status/deck.status.js"></script>
+<script src="../extensions/navigation/deck.navigation.js"></script>
+<script src="../extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
