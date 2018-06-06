@@ -52,108 +52,133 @@
 
 <!-- Slide #2 -->  
 <section class="slide">
-	<h2>I. What is Plastron?</h2>
+	<h2>Python Library and Client for the Fedora API</h2>
 	<ul>
-	<li>Plastron is a Python-based client for interacting with the <a href="https://fedora.info/spec">Fedora API</a></li>
-	<li>Originated in one-off batch loader for testing fcrepo</li>
-	<li>Ideas developed further in import/export sprints</li>
-	<li>Became formalized in Diamonback Newspaper Digitization</li>
+	<li>Made possible by the written specification of the <a href="https://fedora.info/spec">Fedora API</a></li>
+	<li>Originated in a one-off batch loader for testing fcrepo</li>
 	</ul>
 </section>
 
 <!-- Slide #3 -->
 <section class="slide">
-	<h2>II. Why is it called Plastron?</h2>
-	<img src='img/Plastron.jpg' align='right' width=50%>
+	<h2>Plastron</h2>
 	<ul>
-	<li>Plastron is the underside of a turtle's shell</li>
-	<li>References the Diamondback Terrapin, the UMD mascot</li>
-	<li>Image credit: User Ptarp, available at https://en.wikipedia.org/ wiki/Turtle_shell#/media/ File:Painted_Turtle%27s_Plastron_ %22belly_shell%22.jpg</li>
+	<li>UMD batchload client is called plastron</li>
+	<li>Name is for the underside of a turtle's shell</li>
+	<li>Relates to both Diamondback Terrapin and Archelon Application</li>
 	</ul>
 </section>
 
 <!-- Slide #4 -->
 <section class="slide">
-    <h2>II. Why is it called Plastron?</h2>
-    <img src='img/Archelon_skeleton.jpg ' align='right' width=50%>
-	<ul>
-	<li>Name also relates to Archelon</li>
-	<li>Archelon is a prehistoric giant turtle and the namesake of our repository management application</li>
-	<li>Image credit: Public domain image from Frederic A. Lucas, "Animals of the past," available at http://www.copyrightexpired.com/ earlyimage/bones/ large_animalspast_archelon.jpg</li>
-	</ul>
+	<p><img src='img/Plastron.jpg' width=50%></p>
+    <p>Image credit: User Ptarp, available at https://en.wikipedia.org/ wiki/Turtle_shell#/media/ File:Painted_Turtle%27s_Plastron_ %22belly_shell%22.jpg</p>
 </section>
 
 <!-- Slide #5 -->
 <section class="slide">
-	<h2>III. Features (A)</h2>
+    <h2>Purpose</h2>
 	<ul>
-	<li>LDP, PCDM, and Fcrepo classes being abstracted out into their own packages</li>
-	<li>Goal is for Plastron to become one script that relies on these libraries</li>
+	<li>Lightweight loader for Fedora</li>
+	<li>Import/export = export/re-import</li>
+	<li>Can be used to update repository assets</li>
+	<li>Classes for repository and PCDM could be used separately</li>
 	</ul>
 </section>
 
 <!-- Slide #6 -->
 <section class="slide">
-	<h2>III. Features (B)</h2>
+	<h2>Core Concepts</h2>
 	<ul>
-	<li>Modular design</li>
-	<li>Data handler interprets project data</li>
-	<li>Currently have handlers for NDNP newspapers and a "Turtle" handler (RDF + binaries)</li>
-	<li>CSV handler is planned</li>
+	<li>Data handler</li>
+	<li>Item vs. component</li>
 	</ul>
 </section>
 
 <!-- Slide #7 -->
 <section class="slide">
-	<h2>III. Features (C)</h2>
+	<h2>Handlers</h2>
 	<ul>
-	<li>Batch atomic operations</li>
-	<li>Core concept: item vs. component resource</li>
-	<li>Thanks to transactions, items can succeed or fail as a unit</li>
+	<li>Turtle</li>
+	<li>National Digital Newspaper Program XML</li>
+	<li>CSV handler is planned</li>
 	</ul>
 </section>
 
 <!-- Slide #8 -->
 <section class="slide">
-	<h2>III. Features (D)</h2>
+	<h2>Features</h2>
 	<ul>
-	<li>Batch and respository configuration files for ease of use</li>
+	<li>Repository and batch configuration files</li>
+	<li>Support for basic and certificate authentication</li>
 	<li>Configurable logging</li>
-	<li>Transactions and easy batch resumability</li>
-	<li>Limit, percent, dry-run, ping</li>
 	</ul>
 </section>
 
 <!-- Slide #9 -->
 <section class="slide">
-	<h2>III. Features (E)</h2>
+	<h2>Subcommands</h2>
 	<ul>
-	<li>Command-line tool with subcommand architecture</li>
-	<li>--> plastron {load, delete, etc.}
-	<li>Can walk PCDM relations and perform CRUD operations</li>
-	<li>Goal is to enable easy, efficient, & reliable interactions with repository resources</li>
+	<li>Load</li>
+	<li>List</li>
+	<li>Delete</li>
 	</ul>
 </section>
 
 <!-- Slide #10 -->
 <section class="slide">
-	<h2>IV. Future Plans</h2>
+	<h2>Examples</h2>
 	<ul>
-	<li>Release underlying classes as their own module</li>
-	<li>These classes could be used to create other loaders, but also testing and repository crawling applications</li>
-	<li>Hoping for community use and possible adoption as common python+fcrepo toolkit</li>
+	<li>./plastron -r fcrepo_local.yml load -b diamondback.yml</li>
 	</ul>
 </section>
 
 <!-- Slide #11 -->
 <section class="slide">
-	<h2></h2>
+	<h2>Examples</h2>
 	<ul>
-	<li></li>
+	<li>./plastron -r fcrepo_local.yml list -R 'pcdm:hasMember,pcdm:hasFile' http://localhost:8080/rest/foo</li>
 	</ul>
 </section>
 
 <!-- Slide #12 -->
+<section class="slide">
+	<h2>Features (continued)</h2>
+	<ul>
+	<li>Transactions by item</li>
+	<li>Resumability</li>
+	<li>Partial loads (limit/percent/dryrun)</li>
+	</ul>
+</section>
+
+<!-- Slide #13 -->
+<section class="slide">
+	<h2>Results</h2>
+	<ul>
+	<li>Did require tuning our ecosystem</li>
+	<li>Certain bugs were surfaced in Fedora</li>
+	<li>With fixes in place, both Fedora and the loader are performant</li>
+	</ul>
+</section>
+
+<!-- Slide #14 -->
+<section class="slide">
+	<h2>Future Plans</h2>
+	<ul>
+	<li>Make handler creation easier by moving complexity into reusable core</li>
+	<li>Release core API & PCDM classes as their own package?</li>
+	</ul>
+</section>
+
+<!-- Slide #15 -->
+<section class="slide">
+	<h2>Please try it out</h2>
+	<ul>
+	<li>http://github.com/umd-lib/plastron</li>
+	</ul>
+</section>
+
+<!-- Slide #16 -->
 <section class="slide">
 	<h2>Thank you!</h2>
 	    <h3>Joshua Westgard (westgard@umd.edu)</h3>
