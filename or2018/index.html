@@ -71,8 +71,7 @@
 
 <!-- Slide #4 -->
 <section class="slide">
-	<p><img src='img/Plastron.jpg' width=50%></p>
-    <p>Image credit: User Ptarp, available at https://en.wikipedia.org/ wiki/Turtle_shell#/media/ File:Painted_Turtle%27s_Plastron_ %22belly_shell%22.jpg</p>
+	<p><img src='img/Plastron.jpg' width=50%>Image credit: User Ptarp, available at https://en.wikipedia.org/ wiki/Turtle_shell#/media/ File:Painted_Turtle%27s_Plastron_ %22belly_shell%22.jpg</p>
 </section>
 
 <!-- Slide #5 -->
@@ -80,9 +79,10 @@
     <h2>Purpose</h2>
 	<ul>
 	<li>Lightweight loader for Fedora</li>
-	<li>Import/export = export/re-import</li>
-	<li>Can be used to update repository assets</li>
-	<li>Classes for repository and PCDM could be used separately</li>
+	<li>Fills a gap between curl scripts and full application</li>
+	<li>Fedora Import/Export does not load new content</li>
+	<li>Can also be used to update repository assets</li>
+	<li>Classes for repository API and PCDM could be used separately</li>
 	</ul>
 </section>
 
@@ -128,17 +128,13 @@
 <!-- Slide #10 -->
 <section class="slide">
 	<h2>Examples</h2>
-	<ul>
-	<li>./plastron -r fcrepo_local.yml load -b diamondback.yml</li>
-	</ul>
+	<p>./plastron -r fcrepo_local.yml load -b diamondback.yml</p>
 </section>
 
 <!-- Slide #11 -->
 <section class="slide">
 	<h2>Examples</h2>
-	<ul>
-	<li>./plastron -r fcrepo_local.yml list -R 'pcdm:hasMember,pcdm:hasFile' http://localhost:8080/rest/foo</li>
-	</ul>
+	<p>./plastron -r fcrepo_local.yml list -R 'pcdm:hasMember,pcdm:hasFile' http://localhost:8080/rest/foo</p>
 </section>
 
 <!-- Slide #12 -->
