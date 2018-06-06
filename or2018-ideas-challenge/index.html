@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Open Repositories 2018: Ideas Challenge</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="../core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="../extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="../extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="../extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="../extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="../extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" href="../themes/style/swiss.css">
+	
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="../themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="../core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="../modernizr.custom.js"></script>
+</head>
+<body>
+  
+  <div style="background-color: #eeeeee; border-bottom: 2px solid #999;">
+      <img alt="Team Fix-It" src="img/fixitlogo.png" style="padding: 5px">
+    </a>
+  </div>
+  
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+<!-- Slide #1 -->
+<section class="slide">
+	<h2>Team Fix-it</h2>
+	<h3>Joshua Westgard, University of Maryland College Park<br />
+	Don Brower, University of Notre Dame<br />
+	Julian Morley, Stanford University<br />
+	Aaron Birkland, Johns Hopkins University
+	<em>June 6, 2018</em></h3>
+</section>
+
+<!-- Slide #2 -->  
+<section class="slide">
+	<h2>Challenge</h2>
+	<ul>
+	<li>As an owner of digital assets, I would like to have a configurable fixity checking service in my fedora repository.</li>
+    <li>But it's hard because
+         <ul>
+            <li>Fedora only provides an endpoint to build a service, but not the service itself.</li>
+            <li>Large repositories may soon need to make use of the external content feature, which further complicates the use of the fcr:fixity endpoint for this purpose.</li></ul>
+    </li>
+	</ul>
+</section>
+
+<!-- Slide #3 -->
+<section class="slide">
+	<h2></h2>
+	<ul>
+	<li></li>
+	</ul>
+</section>
+
+<!-- Slide #17 -->
+<section class="slide">
+	<h2>Thank you!</h2>
+	    <h3>Joshua Westgard (westgard@umd.edu)</h3>
+</section>
+
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="../jquery.min.js"></script>
+<script src="../core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="../extensions/menu/deck.menu.js"></script>
+<script src="../extensions/goto/deck.goto.js"></script>
+<script src="../extensions/status/deck.status.js"></script>
+<script src="../extensions/navigation/deck.navigation.js"></script>
+<script src="../extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
