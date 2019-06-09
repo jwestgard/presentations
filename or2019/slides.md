@@ -22,7 +22,21 @@ transition: slide
 
 :::
 
-# Slide 2
+<!-- Slide 2 -->
+
+#
+
+<img src="img/ecosystem.png" />
+
+::: notes
+
+* This is a place for speaker notes
+
+:::
+
+<!-- Slide 3 -->
+
+# Plastron
 
 ::: incremental
 
@@ -38,7 +52,9 @@ transition: slide
 
 :::
 
-# Slide 3
+<!-- Slide 4 -->
+
+# Portland Common Data Model 
 
 ::: incremental
 
@@ -54,7 +70,9 @@ transition: slide
 
 :::
 
-# Slide 4
+<!-- Slide 5 -->
+
+# Performance Tuning
 
 ::: incremental
 
@@ -69,6 +87,80 @@ transition: slide
 * This is a place for speaker notes
 
 :::
+
+<!-- Slide 6 -->
+
+# Messaging/Camel
+
+::: incremental
+
+* one
+* two
+* three
+
+:::
+
+::: notes
+
+* This is a place for speaker notes
+
+:::
+
+<!-- Slide 7 -->
+
+# Fixity
+
+::: incremental
+
+* one
+* two
+* three
+
+:::
+
+::: notes
+
+* This is a place for speaker notes
+
+:::
+
+<!-- Slide 8 -->
+
+# Migration
+
+::: incremental
+
+* one
+* two
+* three
+
+:::
+
+::: notes
+
+* This is a place for speaker notes
+
+:::
+
+<!-- Slide 9 -->
+
+# Performance Tuning
+
+::: incremental
+
+* one
+* two
+* three
+
+:::
+
+::: notes
+
+* This is a place for speaker notes
+
+:::
+
+<!-- Slide 10 -->
 
 # Thank you for listening!
 
