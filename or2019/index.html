@@ -14,6 +14,69 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
   <link rel="stylesheet" href="lib/reveal/css/theme/inst326.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
@@ -36,71 +99,180 @@
   <p class="subtitle">Open Repositories 2019</p>
 </section>
 
-<section id="preliminaries" class="slide level1">
-<h1>Preliminaries</h1>
+<section id="section" class="slide level1">
+<h1></h1>
+<h2 id="preliminaries">Preliminaries</h2>
 <div>
 <ul>
-<li class="fragment">one</li>
-<li class="fragment">two</li>
-<li class="fragment">three</li>
+<li class="fragment">Implementation pattern</li>
+<li class="fragment">Practices that have worked for us</li>
+<li class="fragment">Many other patterns might be possible</li>
 </ul>
 </div>
 <aside class="notes">
 <ul>
-<li>This is a place for speaker notes</li>
+<li>Lest there be any confusion: I am not making any claims about “the right way”</li>
+<li>Fedora’s flexibility means that it can be used/deployed in many ways</li>
+<li>Also non-trivial to deploy all services needed</li>
+<li>Hope is that this description can serve as a useful guide for others</li>
 </ul>
 </aside>
 <!-- Slide 2 -->
 </section>
-<section id="section" class="slide level1">
+<section id="section-1" class="slide level1">
 <h1></h1>
-<p><img src="img/ecosystem.png" /></p>
+<h2 id="credit">Credit</h2>
+<div>
+<ul>
+<li class="fragment">Fedora implementation team:
+<ul>
+<li class="fragment">Kate Dohe</li>
+<li class="fragment">Peter Eichman</li>
+<li class="fragment">Bria Parker</li>
+<li class="fragment">Ben Wallberg</li>
+<li class="fragment">Mohamed Abdul Rasheed</li>
+</ul></li>
+<li class="fragment">Fedora Community</li>
+</ul>
+</div>
 <aside class="notes">
 <ul>
-<li>This is a place for speaker notes</li>
+<li>Want to give credit where credit is due</li>
+<li>I’m the one sent here to present this, and opinions expressed are mine</li>
+<li>But the presentation is based on several years work by local team and community members</li>
+<li>Fcrepo Camel Toolbox, import/export, IIIF/Loris, Blacklight</li>
 </ul>
 </aside>
 <!-- Slide 3 -->
 </section>
-<section id="plastron" class="slide level1">
-<h1>Plastron</h1>
-<div>
-<ul>
-<li class="fragment">one</li>
-<li class="fragment">two</li>
-<li class="fragment">three</li>
-</ul>
-</div>
+<section id="section-2" class="slide level1">
+<h1></h1>
+<p class="stretch">
+<img src="img/ecosystem.png" />
+</p>
 <aside class="notes">
 <ul>
-<li>This is a place for speaker notes</li>
+<li>This image depicts our stack and the applications and processes around it</li>
+<li>We consider three user types</li>
+<li>Fedora stack is blue</li>
+<li>Green are user-facing applications</li>
+<li>Yellow are processes</li>
+<li>Organize remarks around these processes</li>
 </ul>
 </aside>
+</section>
+<section id="import" class="slide level1">
+<h1>Import</h1>
 <!-- Slide 4 -->
 </section>
-<section id="portland-common-data-model" class="slide level1">
-<h1>Portland Common Data Model</h1>
+<section id="section-3" class="slide level1">
+<h1></h1>
+<p>
+<a href="https://github.com/umd-lib/plastron" target="_blank"> <img src="img/plastron.png" /> </a>
+</p>
+</section>
+<section id="section-4" class="slide level1">
+<h1></h1>
+<h2 id="import-plastron">Import: Plastron</h2>
 <div>
 <ul>
-<li class="fragment">one</li>
-<li class="fragment">two</li>
-<li class="fragment">three</li>
+<li class="fragment">Python-based LDP client</li>
+<li class="fragment">Support for PCDM content modeling</li>
+<li class="fragment">Facilitates load from various layouts via handlers</li>
+<li class="fragment">Uses Batch-Atomic feature</li>
+<li class="fragment">Easy resumability</li>
+<li class="fragment">Error handling/logging</li>
 </ul>
 </div>
 <aside class="notes">
 <ul>
-<li>This is a place for speaker notes</li>
+<li>First thing we attacked was ingest</li>
+<li>This client was presented in Bozeman</li>
+<li>Currently refactoring to decorator-based pattern</li>
+<li>Best practices for us:
+<ul>
+<li>“tranactions” – ensure object completeness</li>
+<li>resumablity – ensure data quality</li>
+<li>make easy data handler development</li>
+</ul></li>
 </ul>
 </aside>
 <!-- Slide 5 -->
 </section>
-<section id="performance-tuning" class="slide level1">
-<h1>Performance Tuning</h1>
+<section id="section-5" class="slide level1">
+<h1></h1>
+<p class="stretch">
+<a href="img/newspaper_model.png" target="_blank"><img src="img/newspaper_model.png" /></a>
+</p>
+</section>
+<section id="section-6" class="slide level1">
+<h1></h1>
+<h2 id="import-content-modeling">Import: Content Modeling</h2>
 <div>
 <ul>
-<li class="fragment">one</li>
-<li class="fragment">two</li>
-<li class="fragment">three</li>
+<li class="fragment">Plastron applies models upon load</li>
+<li class="fragment">Models built with:
+<ul>
+<li class="fragment">PCDM</li>
+<li class="fragment">rdf:type (e.g. bibo:Letter)</li>
+</ul></li>
+<li class="fragment">Item- and component-level objects</li>
+<li class="fragment">Ordered and unordered components</li>
+</ul>
+</div>
+<aside class="notes">
+<ul>
+<li>Model is applied at ingest, by handler</li>
+<li>Striving for declarative decorator-based</li>
+<li>PCDM has been sufficient</li>
+<li>might be nice to distinguish item and component</li>
+<li>also whether order matters and what is the property that determines order</li>
+</ul>
+</aside>
+</section>
+<section id="section-7" class="slide level1">
+<h1></h1>
+<p class="stretch">
+<a href="https://www.lib.umd.edu/kaporter-correspondence" target="_blank"><img src="img/kap_frontpage.png" /></a>
+</p>
+</section>
+<section id="section-8" class="slide level1">
+<h1></h1>
+<p class="stretch">
+<a href="https://www.lib.umd.edu/prange/posters" target="_blank"><img src="img/prangeposter.png" /></a>
+</p>
+<!-- Slide 6 -->
+</section>
+<section id="section-9" class="slide level1">
+<h1></h1>
+<h2 id="import-repository-architecture">Import: Repository Architecture</h2>
+<div>
+<ul>
+<li class="fragment">Flat structure</li>
+<li class="fragment">Avoids semantics in URIs / structure</li>
+<li class="fragment">Second look at containment</li>
+<li class="fragment">“Demoting” proxies to hash URIs?</li>
+</ul>
+</div>
+<aside class="notes">
+<ul>
+<li>flat was seen as flexible</li>
+<li>WebAC inheritance makes containment at least convenient if not necessary</li>
+<li>ore:proxy resources are also full resources, looking to demote to hash uris</li>
+<li>currently some performance problems with this</li>
+<li>hash uri resources are a good solution for tightly-coupled resources</li>
+</ul>
+</aside>
+<!-- Slide 7 -->
+</section>
+<section id="section-10" class="slide level1">
+<h1></h1>
+<h2 id="import-performance-tuning">Import: Performance Tuning</h2>
+<div>
+<ul>
+<li class="fragment">Performance has been good</li>
+<li class="fragment">Did require tuning</li>
+<li class="fragment">Automated and asynchronous processing</li>
 </ul>
 </div>
 <aside class="notes">
@@ -110,72 +282,178 @@
 </aside>
 <!-- Slide 6 -->
 </section>
-<section id="messagingcamel" class="slide level1">
-<h1>Messaging/Camel</h1>
+<section id="section-11" class="slide level1">
+<h1></h1>
+<h2 id="messagingcamel">Messaging/Camel</h2>
 <div>
 <ul>
-<li class="fragment">one</li>
-<li class="fragment">two</li>
-<li class="fragment">three</li>
+<li class="fragment">Camel facilitates asyncronicity</li>
+<li class="fragment">We use Fcrepo Camel Toolbox</li>
+<li class="fragment">Dropped messages have not been a problem</li>
+<li class="fragment">ActiveMQ</li>
 </ul>
 </div>
 <aside class="notes">
 <ul>
-<li>This is a place for speaker notes</li>
+<li>Camel allows us to push things like indexing to the background</li>
+<li>Response time that might be a problem in another context is fine</li>
+<li>System has been reliable, though by now there is some cleanup called for</li>
+<li>Management of these services requires ActiveMQ</li>
 </ul>
 </aside>
-<!-- Slide 7 -->
+</section>
+<section id="section-12" class="slide level1">
+<h1></h1>
+<p class="stretch">
+<img src="img/ecosystem.png" />
+</p>
 </section>
 <section id="fixity" class="slide level1">
 <h1>Fixity</h1>
+<!-- Slide 7 -->
+</section>
+<section id="section-13" class="slide level1">
+<h1></h1>
+<h2 id="repository-fixity">Repository Fixity</h2>
 <div>
 <ul>
-<li class="fragment">one</li>
-<li class="fragment">two</li>
-<li class="fragment">three</li>
+<li class="fragment">Core repository function</li>
+<li class="fragment">Fedora provides transmission and on-demand checks</li>
+<li class="fragment">We added a service for periodic checking</li>
+<li class="fragment">Populates a nightly queue with next 7000 URIs</li>
+<li class="fragment">Stores results in triple store</li>
 </ul>
 </div>
 <aside class="notes">
 <ul>
-<li>This is a place for speaker notes</li>
+<li>Preservation is not in software but is a process around how software is used</li>
+<li>It is about accountability so set it and forget it is not a viable option</li>
 </ul>
 </aside>
 <!-- Slide 8 -->
 </section>
-<section id="migration" class="slide level1">
-<h1>Migration</h1>
-<div>
-<ul>
-<li class="fragment">one</li>
-<li class="fragment">two</li>
-<li class="fragment">three</li>
-</ul>
-</div>
+<section id="section-14" class="slide level1">
+<h1></h1>
+<h2 id="record-of-fixity-success">Record of Fixity Success</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb1-1" title="1">&lt;foo&gt; </a>
+<a class="sourceLine" id="cb1-2" title="2">    premis:hasFixity </a>
+<a class="sourceLine" id="cb1-3" title="3">    &lt;foo#fixity/1511905188223&gt; .</a>
+<a class="sourceLine" id="cb1-4" title="4"> </a>
+<a class="sourceLine" id="cb1-5" title="5">&lt;foo#fixity/1511905188223&gt; </a>
+<a class="sourceLine" id="cb1-6" title="6">    a premis:EventOutcomeDetail, premis:Fixity ;</a>
+<a class="sourceLine" id="cb1-7" title="7">    premis:hasSize &quot;379531&quot;^^xsd:long ;</a>
+<a class="sourceLine" id="cb1-8" title="8">    premis:hasMessageDigest &lt;urn:sha1:ff...51&gt; ;</a>
+<a class="sourceLine" id="cb1-9" title="9">    premis:hasMessageDigestAlgorithm &quot;SHA-1&quot; ;</a>
+<a class="sourceLine" id="cb1-10" title="10">    premis:hasEventOutcome &quot;SUCCESS&quot; .</a></code></pre></div>
 <aside class="notes">
 <ul>
-<li>This is a place for speaker notes</li>
+<li>This is a record of fixity check success</li>
+<li>Generated as a message body that gets stored in triple store</li>
 </ul>
 </aside>
 <!-- Slide 9 -->
 </section>
-<section id="performance-tuning-1" class="slide level1">
-<h1>Performance Tuning</h1>
-<div>
-<ul>
-<li class="fragment">one</li>
-<li class="fragment">two</li>
-<li class="fragment">three</li>
-</ul>
-</div>
+<section id="section-15" class="slide level1">
+<h1></h1>
+<h2 id="record-of-fixity-failure">Record of Fixity Failure</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb2-1" title="1">&lt;foo&gt;</a>
+<a class="sourceLine" id="cb2-2" title="2">    premis:hasFixity</a>
+<a class="sourceLine" id="cb2-3" title="3">    &lt;foo#fixity/1511905404576&gt; .</a>
+<a class="sourceLine" id="cb2-4" title="4"> </a>
+<a class="sourceLine" id="cb2-5" title="5">&lt;foo#fixity/1511905404576&gt;</a>
+<a class="sourceLine" id="cb2-6" title="6">    a premis:EventOutcomeDetail, premis:Fixity ;</a>
+<a class="sourceLine" id="cb2-7" title="7">    premis:hasSize &quot;379535&quot;^^xsd:long ;</a>
+<a class="sourceLine" id="cb2-8" title="8">    premis:hasMessageDigest &lt;urn:sha1:3c..db&gt; ;</a>
+<a class="sourceLine" id="cb2-9" title="9">    premis:hasMessageDigestAlgorithm &quot;SHA-1&quot; ;</a>
+<a class="sourceLine" id="cb2-10" title="10">    premis:hasEventOutcome &quot;BAD_SIZE&quot; ;</a>
+<a class="sourceLine" id="cb2-11" title="11">    premis:hasEventOutcome &quot;BAD_CHECKSUM&quot; .</a></code></pre></div>
 <aside class="notes">
 <ul>
-<li>This is a place for speaker notes</li>
+<li>This is a record of fixity check failure</li>
+<li>Occurrence of failure event triggers email</li>
 </ul>
 </aside>
 <!-- Slide 10 -->
 </section>
-<section id="thank-you-for-listening" class="slide level1">
-<h1>Thank you for listening!</h1>
+<section id="section-16" class="slide level1">
+<h1></h1>
+<h2 id="storage-of-audit-record">Storage of Audit Record</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource numberLines"><code class="sourceCode"><a class="sourceLine" id="cb3-1" title="1">&lt;foo&gt; a premis:Event, audit:ExternalEvent, </a>
+<a class="sourceLine" id="cb3-2" title="2">        prov:InstantaneousEvent ;</a>
+<a class="sourceLine" id="cb3-3" title="3">    premis:hasEventDateTime &quot;{timestamp}&quot; ;</a>
+<a class="sourceLine" id="cb3-4" title="4">    premis:hasEventType</a>
+<a class="sourceLine" id="cb3-5" title="5">        &lt;http://id.loc.gov/.../eventType/fix&gt; ;</a>
+<a class="sourceLine" id="cb3-6" title="6">    premis:hasEventRelatedObject &lt;{target}&gt; ;</a>
+<a class="sourceLine" id="cb3-7" title="7">    premis:hasEventOutcome earl:passed ;</a>
+<a class="sourceLine" id="cb3-8" title="8">    premis:hasEventOutcomeDetail </a>
+<a class="sourceLine" id="cb3-9" title="9">        &lt;{premis:Fixity resource}&gt; .</a>
+<a class="sourceLine" id="cb3-10" title="10"></a>
+<a class="sourceLine" id="cb3-11" title="11">{premis:Fixity resource from message body}</a></code></pre></div>
+<aside class="notes">
+<ul>
+<li>This is an example of how fixity events are stored</li>
+<li>(Apologies for the inscrutable RDF)</li>
+<li>We can query these records with SPARQL</li>
+<li>This is the framework on which a browse interface can be created</li>
+<li>Health dashboard (stats for resource types/numbers, fixity status)</li>
+</ul>
+</aside>
+<!-- Slide 11 -->
+</section>
+<section id="section-17" class="slide level1">
+<h1></h1>
+<h2 id="fixity-statistics">Fixity Statistics</h2>
+<div>
+<ul>
+<li class="fragment">Running for close to 1 year</li>
+<li class="fragment">Nearly 1 million file assets</li>
+<li class="fragment">2 fixity incidents so far</li>
+</ul>
+</div>
+<aside class="notes">
+<ul>
+<li>One error in 2 million checks</li>
+<li>1 time a file was ingested, passed transmission fixity</li>
+<li>but file seems not to have made it to final location</li>
+<li>1 TIF file has different checksum but not corrupt</li>
+</ul>
+</aside>
+<!-- Slide 12 -->
+</section>
+<section id="section-18" class="slide level1">
+<h1></h1>
+<p class="stretch">
+<img src="img/ecosystem.png" />
+</p>
+</section>
+<section id="export" class="slide level1">
+<h1>Export</h1>
+</section>
+<section id="section-19" class="slide level1">
+<h1></h1>
+<h2 id="export-processes">Export processes</h2>
+<div>
+<ul>
+<li class="fragment">Capability URL service</li>
+<li class="fragment">Community import/export tool</li>
+<li class="fragment">Exported batches sent to APTrust</li>
+<li class="fragment">Tracking database</li>
+</ul>
+</div>
+<aside class="notes">
+<ul>
+<li>Capability URL service for any resource (one-time use download link)</li>
+<li>Export tool is part of our preservation workflow</li>
+<li>item-level export with recursion over properties</li>
+<li>Send bundles to APTrust</li>
+<li>Also developing a tracking database to track backup locations since this is out of scope for the repository</li>
+</ul>
+</aside>
+<!-- Slide 13 -->
+</section>
+<section id="section-20" class="slide level1">
+<h1></h1>
+<h2 id="thank-you-for-listening">Thank you for listening!</h2>
 <div class="center">
 <p>Joshua A. Westgard<br /> University of Maryland Libraries<br /> westgard@umd.edu</p>
 </div>
